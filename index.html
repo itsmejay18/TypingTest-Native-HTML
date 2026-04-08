@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Speed Test</title>
+    <!-- Google Fonts: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Typing Speed Test</h1>
+            <p>Measure your typing speed and accuracy</p>
+        </header>
+
+        <main>
+            <div class="settings">
+                <div class="time-options">
+                    <button class="time-btn active" data-time="30">30s</button>
+                    <button class="time-btn" data-time="60">60s</button>
+                </div>
+                <div class="stats-preview">
+                    <div class="stat-item">
+                        <span class="label">Time:</span>
+                        <span class="value" id="time-left">30s</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="label">WPM:</span>
+                        <span class="value" id="live-wpm">0</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="typing-box" id="typing-box">
+                <div class="text-display" id="text-display">
+                    <!-- Paragraph text injected here via JS -->
+                </div>
+                <!-- Hidden input mapped to the text display -->
+                <input type="text" id="hidden-input" class="hidden-input" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" autofocus>
+            </div>
+
+            <div class="controls">
+                <button id="restart-btn" class="primary-btn">
+                    <!-- Refresh Icon -->
+                    <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="1 4 1 10 7 10"></polyline>
+                        <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
+                    </svg>
+                    Restart Test
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <!-- Results Modal -->
+    <div class="modal-overlay" id="results-modal">
+        <div class="modal">
+            <h2>Test Results</h2>
+            <div class="results-grid">
+                <div class="result-card">
+                    <span class="result-value" id="final-wpm">0</span>
+                    <span class="result-label">WPM</span>
+                </div>
+                <div class="result-card">
+                    <span class="result-value" id="final-accuracy">0%</span>
+                    <span class="result-label">Accuracy</span>
+                </div>
+                <div class="result-card">
+                    <span class="result-value" id="final-chars">0</span>
+                    <span class="result-label">Chars Typed</span>
+                </div>
+                <div class="result-card">
+                    <span class="result-value" id="final-errors">0</span>
+                    <span class="result-label">Errors</span>
+                </div>
+            </div>
+            <button id="play-again-btn" class="primary-btn">Play Again</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
